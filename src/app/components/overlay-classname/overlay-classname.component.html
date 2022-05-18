@@ -1,0 +1,23 @@
+<div class="new-class-name grid grid-cols-1 place-items-center h-screen w-screen">
+    <div class="input-container">
+        <input class="input-style" [(ngModel)]="newClassInput" type="text" placeholder="Klasnaam"> <br>
+        <span class="error" *ngIf="errorMsg">Oops! Mogelijk is het invulveld leeg of de klasnaam is al eerder gekozen.</span>
+        <div class="new-class-footer">
+            <button class="btn fourth btn-thin back-btn" (click)="cancle()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                </svg>
+                Terug
+            </button>
+    
+            <button class="btn fourth btn-thin confirm-btn" (click)="changeClassname(newClassInput)">
+                Bevestig
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    
+</div>

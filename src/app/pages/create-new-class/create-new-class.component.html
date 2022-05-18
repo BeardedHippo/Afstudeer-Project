@@ -1,0 +1,42 @@
+<div class="new-class-container h-screen w-screen">
+    <div class="new-class-name grid grid-cols-1 place-items-center h-screen" *ngIf="creationStep === 'classname'">
+        <div class="input-container">
+            <input class="input-style" [(ngModel)]="newClassInput" type="text" placeholder="Klasnaam">
+            <span class="error" *ngIf="errorMsg">Oops! Mogelijk is het invulveld leeg of de klasnaam is al eerder gekozen.</span>
+        </div>
+
+        <div class="new-class-footer">
+            <button class="btn fourth btn-thin" (click)="addClass(newClassInput)">
+                Maak groepjes
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <app-group-options (handleNewGroup)="handleNewGroup($event)" *ngIf="creationStep === 'groups'"></app-group-options>
+    
+    <div class="new-class-footer" *ngIf="creationStep === 'groups'">
+        <button class="btn fourth btn-thin" (click)="chooseDifficulty()">
+            Kies moeilijkheid
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="new-class-footer" *ngIf="creationStep === 'difficulty'">
+        <button class="btn fourth btn-thin" (click)="introMovie()">
+            De introductie!
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="new-difficulty container" *ngIf="creationStep === 'difficulty'">
+        <app-difficulty-selection></app-difficulty-selection>
+    </div>
+</div>
+

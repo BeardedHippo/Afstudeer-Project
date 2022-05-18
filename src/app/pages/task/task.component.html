@@ -1,0 +1,48 @@
+<app-main-story 
+    *ngIf="taskRouter === 'main-story'" 
+
+    [currentStoryIndex]="currentStoryIndex" 
+    [currentTask]="currentTask" 
+
+    (handleStoryOptions)="setTaskRouter($event)"
+>
+</app-main-story>
+
+<app-story-option 
+    *ngIf="taskRouter === 'story-options'" 
+
+    [currentStoryIndex]="currentStoryIndex" 
+    [currentTask]="currentTask"
+
+    (handleChoiceStory)="setTaskRouter($event)" 
+    (storyChoice)="handleStoryChoice($event)" 
+    (returnToMainStory)="returnedFromOptions($event)"
+>
+</app-story-option>
+
+<app-choice-story 
+    *ngIf="taskRouter === 'choice-story'" 
+
+    [currentStoryIndex]="currentStoryIndex" 
+    [currentTask]="currentTask" 
+    [latestStoryChoice]="latestStoryChoice" 
+
+    (handleMainStory)="setTaskRouter($event)"
+>
+</app-choice-story>
+
+<app-final-main-story
+    *ngIf="taskRouter === 'final-mainstory'" 
+
+    [currentStoryIndex]="currentStoryIndex" 
+    [currentTask]="currentTask" 
+
+    (handleFinalScores)="setTaskRouter($event)"
+>
+</app-final-main-story>
+
+<app-final-scores
+    *ngIf="taskRouter === 'finish-scores'" 
+    [currentTask]="currentTask"
+>
+</app-final-scores>

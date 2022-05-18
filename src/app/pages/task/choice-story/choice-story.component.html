@@ -1,0 +1,16 @@
+<div class="grid overflow-hidden grid-cols-12 video"> 
+	<div class="col-start-2 col-span-10 videoblock">
+        <app-video [videoUri]="videoUri"></app-video>
+    </div>
+    <div class="col-start-6 col-span-2 next-btn">
+        <button class="btn btn-whitespace fourth" (click)="toMainStory()">Vervolg verhaal</button> 
+    </div>
+    <div class="col-start-11 col-span-1 exit-btn" (click)="confirmationWindow(true)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#F6C660" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+    </div>
+
+</div>
+
+<app-confirm-exit *ngIf="confirmExit" (exitConfirmWindow)="confirmationWindow($event)"></app-confirm-exit>

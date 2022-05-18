@@ -1,0 +1,3 @@
+<ul>
+    <li *ngFor="let difficulty of allDifficulties; index as i;" (click)="setDifficulty(difficulty.id)">{{ difficulty.label }}</li>
+</ul>

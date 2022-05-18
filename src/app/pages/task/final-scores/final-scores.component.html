@@ -1,0 +1,35 @@
+<div class="scores grid grid-cols-1 place-items-center">
+    <div 
+        class="single-score"
+        
+        [ngClass]="{'place-0': groupPositions.first === group.name, 'place-1': groupPositions.second === group.name, 'place-2': groupPositions.third === group.name, 'place-3': groupPositions.fourth === group.name, 'place-4': groupPositions.fifth === group.name, 'place-5': groupPositions.sixth === group.name, 'place-6': groupPositions.seventh === group.name, 'place-7': groupPositions.eighth === group.name}"
+
+
+        *ngFor="let group of classGroups; index as i;"
+    >
+        <div class="grid overflow-hidden grid-cols-1 grid-rows-1 gap-0">
+            <div class="score-box flex justify-between">
+                <div class="order-first">{{group.name}}</div>
+                <div class="order-last">
+                    <div class="points">
+                        {{group.points}}
+                    </div>
+                    
+                    <div class="diamond">
+                        <img src="assets/img/diamond.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="to-boardroom">
+            <a routerLink="/boardroom" routerLinkActive="active">
+                <button class="btn btn-whitespace fourth">
+                    Boardroom
+                </button>
+            </a>
+        </div>
+    </div>
+</div>

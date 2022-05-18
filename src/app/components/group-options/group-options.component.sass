@@ -1,0 +1,141 @@
+.set-groups 
+    width: 100vh
+
+.group-options 
+    padding: 30vh 4em 0 4em
+
+.input-style
+    width: 100%
+    height: 140px
+    background-color: #88C0A7
+    border: 4px solid rgba(3, 60, 90, 0.2)
+    border-radius: 0.4em
+    font-size: 3rem
+    font-family: 'simple_stamp'
+    text-align: center
+    color: #033C5A
+
+    &:focus
+        outline: none
+
+    &::placeholder
+        color: rgba(3, 60, 90, 0.20)
+
+.btn
+    width: 50%
+    font-size: 1.5rem
+    margin-top: 1em
+    float: right
+    font-size: 2em
+
+.manage-icon
+    position: absolute
+    z-index: 10
+    right: 0.1em
+    top: 0.1em
+    cursor: pointer
+
+.manage-icon svg
+    padding: 0.1em 0
+    width: 4rem
+    height: 4.6rem
+
+    &:hover, &:focus
+      color: #FFAD00
+      outline: 0
+
+.manage-bar
+    position: relative
+    width: auto
+    padding: 0.15em 0.4em
+    margin-left: -150px
+    margin-right: 150px
+    opacity: 0
+    z-index: -1
+    transition: 0.2s ease-out
+
+    & .icon svg
+        width: 3rem
+        height: 4rem
+        margin-right: 0.3em
+        color: #033C5A
+        cursor: pointer
+    
+    & .icon:first-child
+        margin-left: 0.2em
+    
+    & .icon :hover
+        color: #FFAD00
+
+.manage-bar-active
+    margin-left: 0.5em
+    margin-right: 1em
+    opacity: 1
+    z-index: 0
+
+.single-group
+    box-sizing: border-box
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    background-color: white
+    border: 4px solid rgba(3, 60, 90, 0.2)
+    border-radius: 0.3em
+    color: #033C5A
+    display: -webkit-box 
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    font-size: 3rem
+    font-weight: 400
+    line-height: 1.3
+    text-decoration: none
+    justify-content: center
+    font-family: 'simple_stamp'
+    position: relative
+    padding: 0.2em
+
+
+.group-block
+    margin-top: 3em
+        
+    &:first-child, &:nth-child(2)        
+        margin-top: 0
+
+.error
+    color: white
+    text-shadow: 0px 2px 2px rgb(0 0 0 / 80%)
+    font-size: 1.5rem
+    text-align: center
+    line-height: 2
+    position: relative
+    padding-top: 1em
+
+    
+    &:after 
+        content: ""
+        background: white
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 1px
+        top: 0
+
+.group-columns
+    margin-bottom: 5em
+
+@media only screen and (min-width: 1921px)
+    .manage-icon
+        right: -0.5em
+
+    .manage-icon svg
+        width: 9rem
+
+    .manage-bar
+        & .icon svg
+            width: 4rem
+            margin-right: 0.5em
+        
+        & .icon:first-child
+            margin-left: 0.5em

@@ -1,0 +1,135 @@
+<div class="grid grid-cols-8 gap-0">
+	<div class="col-start-1 col-span-3 choice-card">
+        <div 
+            class="card-content flex flex-col justify-center place-items-center"
+            [ngClass]="{'clickable-choice': !hiddenAnswers}"
+            cdkDropList
+            #leftListField="cdkDropList"
+            [cdkDropListData]="leftList"
+            [cdkDropListConnectedTo]="[leftListFieldList, rightListFieldList, rightListField, groupsList]"
+            (cdkDropListDropped)="drop($event)"
+            (click)="toChoiceStory(0)"
+        >
+            <div class="card-title">{{storyOptions[0].character}}</div>
+            <div class="card-img"><img [src]="'assets/characters/' + storyOptions[0].character + '.svg'" alt=""></div>
+            <div class="card-body" *ngIf="hiddenAnswers">
+               <p>{{storyOptions[0].storyContent}}</p>
+            </div>
+            <div class="card-answers" *ngIf="!hiddenAnswers">
+                <div class="points">
+                    +{{storyOptions[0].points}} 
+                </div>
+                <div class="diamond">
+                    <img src="assets/img/diamond.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="col-start-4 col-span-2 option-fields">
+        <div class="grid grid-cols-2 gap-0">
+            <div 
+                class="dropfield field-left col-span-1"
+                cdkDropList
+                #leftListFieldList="cdkDropList"
+                [cdkDropListData]="leftList"
+                [cdkDropListConnectedTo]="[rightListFieldList, leftListField, rightListField, groupsList]"
+                (cdkDropListDropped)="drop($event)"
+            >
+                <div *ngIf="hiddenAnswers">
+                    <div class="group-label mid-labels" [ngClass]="{'mid-labels-extend': leftList.length > 4}" *ngFor="let group of leftList" cdkDrag>{{group.name}}</div>
+                </div>
+                <div *ngIf="!hiddenAnswers">
+                    <div class="group-label mid-labels" [ngClass]="{'mid-labels-extend': leftList.length > 4}" *ngFor="let group of leftList">{{group.name}}</div>
+                </div>
+            </div>
+
+
+            <div 
+                class="dropfield field-right col-span-1"
+                cdkDropList
+                #rightListFieldList="cdkDropList"
+                [cdkDropListData]="rightList"
+                [cdkDropListConnectedTo]="[leftListField, leftListFieldList, rightListField, groupsList]"
+                (cdkDropListDropped)="drop($event)"
+            >
+                <div *ngIf="hiddenAnswers" class="right-labels">
+                    <div class="group-label mid-labels" [ngClass]="{'mid-labels-extend': rightList.length > 4}" *ngFor="let group of rightList" cdkDrag>{{group.name}}</div>    
+                </div>
+                <div *ngIf="!hiddenAnswers" class="right-labels">
+                    <div class="group-label mid-labels" [ngClass]="{'mid-labels-extend': rightList.length > 4}" *ngFor="let group of rightList">{{group.name}}</div>    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+	<div class="col-start-6 col-span-3 choice-card">
+        <div 
+            class="card-content flex flex-col justify-center place-items-center"
+            [ngClass]="{'clickable-choice': !hiddenAnswers}"
+            cdkDropList
+            #rightListField="cdkDropList"
+            [cdkDropListData]="rightList"
+            [cdkDropListConnectedTo]="[leftListFieldList, rightListFieldList, leftListField, groupsList]"
+            (cdkDropListDropped)="drop($event)"
+            (click)="toChoiceStory(1)"
+        >
+            <div class="card-title">{{storyOptions[1].character}}</div>
+            <div class="card-img"><img [src]="'assets/characters/' + storyOptions[1].character + '.svg'" alt=""></div>
+            <div class="card-body" *ngIf="hiddenAnswers">
+               <p>{{storyOptions[1].storyContent}}</p>
+            </div>
+            <div class="card-answers" *ngIf="!hiddenAnswers">
+                <div class="points">
+                    +{{storyOptions[1].points}} 
+                </div>
+                <div class="diamond">
+                    <img src="assets/img/diamond.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid col-span-8 gap-0 buttonblock">
+
+        <div class="col-span-1 bck-btn" (click)="back()" *ngIf="hiddenAnswers">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#F6C660" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+              </svg>
+        </div>
+        <div class="col-span-1 bck-btn" (click)="toggleInfoWindow(true)" *ngIf="!hiddenAnswers">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#F6C660" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+
+        <div class="col-start-4 col-span-2">
+            <div 
+            class="draggable-classes flex justify-center place-items-center" 
+            cdkDropList 
+            #groupsList="cdkDropList" 
+            [cdkDropListData]="newGroups" 
+            [cdkDropListConnectedTo]="[leftListFieldList, rightListFieldList, leftListField, rightListField]" 
+            (cdkDropListDropped)="drop($event)">
+                <button *ngFor="let group of newGroups; index as i" class="group-label" [class]="'group-' + i" cdkDrag>
+                    {{ group.name }}
+                </button>
+                <button *ngIf="hiddenAnswers" class=" group-label bottom-label confirm-choice btn btn-whitespace fourth" [ngClass]="{'confirm-choice-visible': newGroups.length === 0}" (click)="showAnswers(storyOptions[0].points, storyOptions[1].points)">
+                    Bevestig keuzes
+                </button>
+                <button class="group-label bottom-label choose-buddy" *ngIf="!hiddenAnswers">
+                    Kies jullie buddy
+                </button>
+            </div>
+        </div>
+
+        <div class="col-start-8 col-span-1 exit-btn" (click)="confirmationWindow(true)">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#F6C660" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+
+    </div>
+</div>
+
+<app-confirm-exit *ngIf="confirmExit" (exitConfirmWindow)="confirmationWindow($event)"></app-confirm-exit>
+<app-info-window *ngIf="infoWindow.visibility" [explaination]="currentTask!.mainStory[currentStoryIndex]!.storyExplaination" (closeInfoWindow)="toggleInfoWindow($event)"></app-info-window>

@@ -1,0 +1,234 @@
+@import 'tailwindcss/base'
+@import 'tailwindcss/components'
+@import 'tailwindcss/utilities'
+
+// General styles up to Full HD
+@font-face
+  font-family: "simple_stamp"
+  src: url("assets/fonts/simple_stamp.otf") format("opentype")
+
+body
+    background: url("assets/img/bg_pattern.png") repeat #027368
+    color: white
+
+// General button styles
+.btn
+  width: 100%
+  box-sizing: border-box
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  background-color: #F6C660
+  border: 4px solid rgba(3, 60, 90, 0.2)
+  border-radius: 0.3em
+  color: #e74c3c
+  cursor: pointer
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-align-self: center
+  -ms-flex-item-align: center
+  align-self: center
+  font-size: 2rem
+  font-weight: 400
+  line-height: 1
+  text-decoration: none
+  justify-content: center
+  font-family: 'simple_stamp'
+  position: relative
+
+.btn-whitespace
+    padding: 0.8em 1em
+
+    &:hover, &:focus
+      color: white
+      outline: 0
+
+.fourth
+  color: #033C5A
+  background-image: -webkit-linear-gradient(45deg, #FFAD00 50%, transparent 50%)
+  background-image: linear-gradient(45deg, #FFAD00 50%, transparent 50%)
+  background-position: 99%
+  background-size: 400%
+  -webkit-transition: background 300ms ease-in-out
+  transition: background 300ms ease-in-out
+
+  &:hover, &:focus
+    background-position: -20px
+
+.btn-thin
+    width: 100%
+    padding: 0.45em 0.5em 0.3em 0.5em
+
+    &:hover, &:focus
+      color: white
+      outline: 0
+
+.exit-btn
+  margin-top: 2em
+  color: #033C5A
+  cursor: pointer
+  position: relative
+
+  & svg
+    width: 7rem
+    height: 7rem
+    right: 0
+    bottom: 0
+    margin-bottom: -7px
+    position: absolute
+
+  & svg:hover
+    fill: #FFAD00
+
+.bck-btn
+  margin-top: 7em
+  color: #033C5A
+  cursor: pointer
+  position: relative
+
+  & svg
+    width: 7rem
+    height: 7rem
+    left: 3em
+    bottom: 0
+    margin-bottom: -7px
+    margin-left: -7px
+    position: absolute
+
+  & svg:hover
+    fill: #FFAD00
+
+.exit-btn svg
+  right: 3em
+  margin-right: -7px
+
+// Video styles
+.video
+  padding-top: 3em
+
+  .next-btn
+    margin-top: 1em
+
+  .videoblock
+    margin-bottom: 1em
+
+  .exit-btn
+    margin-top: 2em
+
+
+// Media queries
+@media only screen and (min-width: 1921px)
+  .btn
+    border: 4px solid rgba(3, 60, 90, 0.2)
+    border-radius: 0.3em
+    font-size: 2rem
+
+  .btn-whitespace
+    padding: 0.8em 1em
+
+  .btn-thin
+    padding: 0.45em 0.5em 0.3em 0.5em
+
+  .fourth
+    background-position: 99%
+    background-size: 400%
+
+    &:hover, &:focus
+      background-position: -20px
+
+  .exit-btn
+    margin-top: 2em
+
+    & svg
+      width: 7rem
+      height: 7rem
+      margin-bottom: -7px
+
+  .exit-btn svg
+    right: 3em
+    margin-right: -7px
+
+
+  .bck-btn
+    margin-top: 7em
+
+    & svg
+      width: 7rem
+      height: 7rem
+      left: 3em
+      bottom: 0
+      margin-bottom: -7px
+      margin-left: -7px
+
+  // Video styles
+  .video
+    padding-top: 3em
+
+    .next-btn
+      margin-top: 2em
+
+    .videoblock
+      margin-bottom: 3em
+
+    .exit-btn
+      margin-top: 2em
+
+@media only screen and (min-width: 2161px)
+  .btn
+    border: 4px solid rgba(3, 60, 90, 0.2)
+    border-radius: 0.3em
+    font-size: 2rem
+
+  .btn-whitespace
+    padding: 0.8em 1em
+
+  .btn-thin
+    padding: 0.45em 0.5em 0.3em 0.5em
+
+  .fourth
+    background-position: 99%
+    background-size: 400%
+
+    &:hover, &:focus
+      background-position: -20px
+
+  .exit-btn
+    margin-top: 2em
+
+    & svg
+      width: 7rem
+      height: 7rem
+      margin-bottom: -7px
+
+  .exit-btn svg
+    right: 3em
+    margin-right: -7px
+
+
+  .bck-btn
+    margin-top: 7em
+
+    & svg
+      width: 7rem
+      height: 7rem
+      left: 3em
+      bottom: 0
+      margin-bottom: -7px
+      margin-left: -7px
+
+  // Video styles
+  .video
+    padding-top: 3em
+
+    .next-btn
+      margin-top: 2em
+
+    .videoblock
+      margin-bottom: 3em
+
+    .exit-btn
+      margin-top: 2em
+
+
