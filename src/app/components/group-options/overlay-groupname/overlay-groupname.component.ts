@@ -1,3 +1,6 @@
+// Deze component brengt een popup om een groepnaam aan te passen
+// Deze popup wordt actief door een events te emitten van en naar group-options
+
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GroupOfChildren } from 'src/app/models/classOfChildrenModel';
 import { nameChangeToggleType } from 'src/app/models/taskModels';

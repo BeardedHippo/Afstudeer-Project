@@ -1,3 +1,6 @@
+// Een simpele homescherm waarbij de keuze wordt gemaakt om een nieuwe klas te maken of een eerder gemaakte
+// klas te selecteren
+
 import { Component, OnInit } from '@angular/core';
 
 

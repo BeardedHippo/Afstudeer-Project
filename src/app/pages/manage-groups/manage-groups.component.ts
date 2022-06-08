@@ -1,3 +1,5 @@
+// Dit is een losse pagina waarin groepen bewerkt kunnen worden, maakt vervolgens gebruik van de group options component
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GroupOfChildren } from 'src/app/models/classOfChildrenModel';

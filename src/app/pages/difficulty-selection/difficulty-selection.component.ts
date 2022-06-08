@@ -1,3 +1,5 @@
+// In dit scherm kan een moeilijkheid geselecteerd worden voor de klas aan kinderen
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClassOfChildren } from 'src/app/models/classOfChildrenModel';

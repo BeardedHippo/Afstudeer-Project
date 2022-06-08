@@ -1,3 +1,5 @@
+// Dit is de pagina waarin de gebruiker eerder gemaakte klassen kan selecteren om mee verder te spelen
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClassOfChildren } from 'src/app/models/classOfChildrenModel';

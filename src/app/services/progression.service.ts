@@ -1,3 +1,6 @@
+// De functie van deze service is om de progressie van punten bij te houden van alle groepjes. Deze service biedt zijn
+// diensten aan wanneer een spel gespeeld wordt. En reset zichzelf aan het begin van een nieuw spel.
+
 import { Injectable } from '@angular/core';
 import { GroupOfChildren } from '../models/classOfChildrenModel';
 import { ClassesOfChildrenService } from './classes-of-children.service';

@@ -1,3 +1,5 @@
+// Een simpele pagina met een filmpje dat als 'tutorial' zou functioneren.
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClassesOfChildrenService } from 'src/app/services/classes-of-children.service';

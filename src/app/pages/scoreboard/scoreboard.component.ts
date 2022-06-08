@@ -1,3 +1,5 @@
+// Dit is de scoreboard voor alle groepjes
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GroupOfChildren } from 'src/app/models/classOfChildrenModel';

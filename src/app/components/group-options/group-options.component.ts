@@ -1,3 +1,5 @@
+// Dit component brengt een scherm met de opties om groepen aan te passen
+
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ClassOfChildren, GroupOfChildren } from 'src/app/models/classOfChildrenModel';
 import { nameChangeToggleType } from 'src/app/models/taskModels';

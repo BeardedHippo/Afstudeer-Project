@@ -1,3 +1,6 @@
+// Met dit component kunnen gebruikers een nieuwe klas van kinderen maken. Hiervoor zijn er drie stappen (CreationStep type).
+// Ieder stap zorgt ervoor dat de html andere divs inlaadt. De huidige stap wordt bij 'creationStep' gezet.
+
 import { Component, Input, OnInit } from '@angular/core';
 import { ClassesOfChildrenService } from './../../services/classes-of-children.service';
 import { CreationStep, GroupOfChildren } from 'src/app/models/classOfChildrenModel';

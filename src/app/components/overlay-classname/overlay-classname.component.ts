@@ -1,3 +1,5 @@
+// Dit is een popup voor het veranderen van een klasnaam, dit wordt vertoond door een event te emitten van en naar de pagina
+
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ClassesOfChildrenService } from 'src/app/services/classes-of-children.service';
 

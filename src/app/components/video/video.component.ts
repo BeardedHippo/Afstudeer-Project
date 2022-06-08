@@ -1,3 +1,5 @@
+// Een herbruikbare video component
+
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({

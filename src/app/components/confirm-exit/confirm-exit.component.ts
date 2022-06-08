@@ -1,3 +1,5 @@
+// Een elgemene exit knop die de gebruiker terug naar de boardroom brengt
+
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
